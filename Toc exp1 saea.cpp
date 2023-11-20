@@ -2,32 +2,27 @@
 #include<string.h>
 int main()
 {
-	int len,i;
+	char s[100];
 	int a;
-	char string[10];
-	int flag=0;
+	int len,i;
 	printf("Enter a string:");
-	scanf("%s",string);
-	len=strlen(string);
-	for(i=0;i<len;i++)
+	scanf("%s",s);
+	len=strlen(s);
+	if(s[0]=='a' && s[len-1]=='a')
 	{
-		if(string[i]=='0' || string[i]=='1')
+		for(i=0;i<len;i++)
 		{
-			flag=1;
-			break;
+			if(s[i]=='0' || s[i]=='1')
+			{
+				printf("Invalid!");
+				return 0;
+			}
 		}
-	}
-	if(flag)
-	{
-		printf("string is invalid\n");
-	}
-	else if(string[0]=='a'&&string[len-1]=='a')
-	{
-		printf("string is accepted");
+		printf("Accepted");
 	}
 	else
 	{
-		printf("string is not accepted");
-    }
+		printf("Not accepted");
+	}
 	return 0;
 }
